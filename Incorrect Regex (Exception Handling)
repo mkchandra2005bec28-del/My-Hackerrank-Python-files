@@ -1,0 +1,12 @@
+import re
+
+def check_regex():
+    for _ in range(int(input())):
+        try:
+            re.compile(input().strip())
+            print(True)
+        except re.error:
+            print(False)
+
+if __name__ == '__main__':
+    check_regex()
