@@ -1,0 +1,51 @@
+
+   #Program to perform full adder and full subtractor
+   from gates import logicgate
+   def fulladd(a,b,c):
+           x1=logicgate.XOR(a,b)
+           x2=logicgate.AND(b,a)
+           x3=logicgate.AND(c,x1)
+           sumx=logicgate.XOR(x1,c)
+           cout=logicgate.OR(x3,x2)
+          return sumx,cout
+ 
+  def fullsub(a,b,c):
+          y1=logicgate.XOR(a,b)
+          y2=logicgate.AND(b,logicgate.NOT(a))
+          y3=logicgate.AND(logicgate.NOT(y1),c)
+          dify=logicgate.XOR(c,y1)
+          bout=logicgate.OR(y3,y2)
+          return dify,bout
+ 
+ 
+  #main
+  print('------INPUT------')
+  print('1.FULL ADDER\n2.FULL SUBTRACTOR')
+  choice=int(input('Enter your choice(1,2):'))
+  if(choice==1):
+          print('Enter the input in binary(0,1)...')
+          x=int(input('Enter the Input_1:'))
+          y=int(input('Enter the Input_2:'))
+          z=int(input('Enter the carry_out Input:'))
+          if((x==0 or x==1) and (y==0 or y==1) and (z==0 or z==1)):
+                  sums,carry=fulladd(x,y,z)
+                print('------OUTPUT------')
+                  print('The sum value:',sums)
+                  print('The carry_out Output:',carry)
+          else:
+                  print('Input is not in binary(0,1)')
+  elif(choice==2):
+          print('Enter the input in binary(0,1)...')
+          x=int(input('Enter the Input_1:'))
+          y=int(input('Enter the Input_2:'))
+          z=int(input('Enter the Borrow Input:'))
+          if((x==0 or x==1) and (y==0 or y==1) and (z==0 or z==1)):
+                  diff,boor=fullsub(x,y,z)
+                  print('------OUTPUT------')
+                  print('The difference value:',diff)
+                  print('The Borrowed Output:',boor)
+          else:
+                  print('Input is not in binary(0,1)')
+  else:
+          print('invalid choice')
+                                                                            
