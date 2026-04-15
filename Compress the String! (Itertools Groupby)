@@ -1,0 +1,13 @@
+from itertools import groupby
+
+def compress_string():
+    s = input().strip()
+    
+    results = []
+    for k, g in groupby(s):
+        occurrence_count = len(list(g))
+        results.append((occurrence_count, int(k)))
+    print(*(results))
+
+if __name__ == '__main__':
+    compress_string()
