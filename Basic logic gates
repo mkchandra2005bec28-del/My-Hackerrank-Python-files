@@ -1,0 +1,49 @@
+   from gates import logicgate
+   def logics(a):
+           if(a==0 or a==1):
+                   print('NOT GATE')
+                   return (logicgate.NOT(a))
+           else:
+                   return ('invalid input')
+   def logic(a,b,gateno):
+          if((a==0 or a==1) and (b==0 or b==1)):
+                  if(gateno==1):
+                          print('AND GATE')
+                          return(logicgate.AND(a,b))
+                  elif(gateno==2):
+                          print('OR GATE')
+                          return(logicgate.OR(a,b))
+                  elif(gateno==4):
+                          print('NAND GATE')
+                          return(logicgate.NAND(a,b))
+                  elif(gateno==5):
+                         print('NOR GATE')
+                          return(logicgate.NOR(a,b))
+                  elif(gateno==6):
+                          print('XOR GATE')
+                         return(logicgate.XOR(a,b))
+                  elif(gateno==7):
+                          print('XNOR GATE')
+                          return(logicgate.XNOR(a,b))
+                  else:
+                          return ('invalid gate_no')
+          else:
+                  return ('invalid input')
+ 
+ 
+ 
+ 
+  #main
+  print('------GATES------')
+  print('1.AND\n2.OR\n3.NOT\n4.NAND\n5.NOR\n6.XOR\n7.XNOR')
+  gate=int(input('Enter the GATE_NO to perform:'))
+  print('Enter the input as BINARY DIGITS(0,1)...')
+  if(gate == 3):
+          x=int(input('Input_1:'))
+          result=logics(x)
+  else:
+          x=int(input('Input_1:'))
+          y=int(input('Input_2:'))
+          result=logic(x,y,gate)
+  print('OUTPUT:',result)
+                                            
