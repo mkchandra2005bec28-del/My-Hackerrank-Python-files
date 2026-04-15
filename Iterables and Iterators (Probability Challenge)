@@ -1,0 +1,20 @@
+from itertools import combinations
+
+def calculate_probability():
+
+    n = int(input())
+
+    chars = input().split()
+ 
+    k = int(input())
+    
+    all_combos = list(combinations(chars, k))
+    
+
+    contains_a = [combo for combo in all_combos if 'a' in combo]
+    
+    probability = len(contains_a) / len(all_combos)
+    print(f"{probability:.4f}")
+
+if __name__ == '__main__':
+    calculate_probability()
