@@ -1,0 +1,18 @@
+from itertools import product
+
+def solve():
+    k, m = map(int, input().split())
+    lists = []
+    for _ in range(k):
+        lists.append(list(map(int, input().split()))[1:])
+    
+    results = []
+    for combination in product(*lists):
+   
+        s_max = sum(x**2 for x in combination) % m
+        results.append(s_max)
+        
+    print(max(results))
+
+if __name__ == '__main__':
+    solve()
