@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the total number of stamps
+n = int(input())
+
+# Initialize an empty set
+distinct_stamps = set()
+
+# Iterate through the number of stamps and add each to the set
+for _ in range(n):
+    stamp = input().strip()
+    distinct_stamps.add(stamp)
+
+# Print the total number of distinct elements
+print(len(distinct_stamps))
