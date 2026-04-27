@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations_with_replacement
+
+# Read input, split into string and k
+S, k = input().split()
+
+# Sort the string lexicographically as required
+S = sorted(S)
+k = int(k)
+
+# Generate combinations with replacement
+res = combinations_with_replacement(S, k)
+
+# Print each combination joined as a string
+for i in res:
+    print("".join(i))
