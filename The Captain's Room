@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOU# 1. Read the group size K
+k = int(input())
+
+# 2. Read the list of room numbers
+room_list = list(map(int, input().split()))
+
+# 3. Create a set of unique room numbers
+room_set = set(room_list)
+
+# 4. Mathematical Formula:
+# ((Sum of unique rooms * K) - (Sum of all rooms)) / (K - 1)
+# This works because the Captain is "missing" (K-1) occurrences 
+# in the actual list compared to the family groups.
+captains_room = (sum(room_set) * k - sum(room_list)) // (k - 1)
+
+print(captains_room)
