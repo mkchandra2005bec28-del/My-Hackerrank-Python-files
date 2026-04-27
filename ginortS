@@ -1,0 +1,15 @@
+def custom_sort(s):
+    # The sorted function will use our lambda to determine the sort order
+    result = sorted(s, key=lambda x: (
+        x.isdigit(),              # False (0) for letters, True (1) for digits
+        x.isupper(),              # False (0) for lower, True (1) for upper
+        x.isdigit() and int(x) % 2 == 0, # False (0) for odd, True (1) for even
+        x                         # Finally, sort by the character itself
+    ))
+    
+    # Join the list back into a string
+    print("".join(result))
+
+if __name__ == "__main__":
+    s = input().strip()
+    custom_sort(s)
