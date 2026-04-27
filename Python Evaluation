@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the entire line of input
+var = input()
+
+# Evaluate the expression
+eval(var)
