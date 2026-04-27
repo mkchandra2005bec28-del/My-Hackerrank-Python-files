@@ -1,0 +1,15 @@
+def print_formatted(number):
+    # Step 1: Calculate the width based on the binary of the largest number
+    # bin(number) returns '0b10001', so we slice [2:] to get '10001'
+    width = len(bin(number)[2:])
+    
+    # Step 2: Loop from 1 to number (inclusive)
+    for i in range(1, number + 1):
+        # We can use Python's string formatting to handle alignment and conversion
+        # d = decimal, o = octal, X = uppercase hex, b = binary
+        # >width means right-aligned with the calculated padding
+        print(f"{i:>{width}d} {i:>{width}o} {i:>{width}X} {i:>{width}b}")
+
+
+
+
