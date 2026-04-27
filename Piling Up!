@@ -1,0 +1,38 @@
+from collections import deque
+
+def solve_stacking():
+    try:
+        t = int(input())  # Number of test cases
+        for _ in range(t):
+            n = int(input())  # Number of cubes
+            # Use a deque for efficient popping from both ends
+            cubes = deque(map(int, input().split()))
+            
+            last_cube = float('inf')
+            possible = True
+            
+            while cubes:
+                # Compare the two ends
+                left = cubes[0]
+                right = cubes[-1]
+                
+                # Pick the larger value available
+                if left >= right:
+                    current = cubes.popleft()
+                else:
+                    current = cubes.pop()
+                
+                # Check if the picked cube violates the stacking rule
+                if current > last_cube:
+                    possible = False
+                    break
+                
+                last_cube = current
+            
+            print("Yes" if possible else "No")
+            
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    solve_stacking()
