@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, m;
+    float f1, f2;
+
+    // Read input: two integers on line 1, two floats on line 2
+    scanf("%d %d", &n, &m);
+    scanf("%f %f", &f1, &f2);
+
+    // Print integer sum and difference
+    printf("%d %d\n", n + m, n - m);
+    
+    // Print float sum and difference scaled to 1 decimal place
+    printf("%.1f %.1f\n", f1 + f2, f1 - f2);
+
+    return 0;
+}
