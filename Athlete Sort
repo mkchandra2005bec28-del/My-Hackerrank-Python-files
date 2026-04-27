@@ -1,0 +1,16 @@
+## Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the athlete data into a list of lists
+rows = [list(map(int, input().split())) for _ in range(n)]
+
+# Read the attribute index K to sort by
+k = int(input())
+
+# Sort the rows based on the element at index K
+# Python's sort is "stable," preserving original order for ties
+rows.sort(key=lambda x: x[k])
+
+# Print the sorted table
+for row in rows:
+    print(*row)
