@@ -1,0 +1,6 @@
+def swap_case(s):
+    # Check each character and flip it
+    return "".join([char.lower() if char.isupper() else char.upper() for char in s])
+
+    return
+
