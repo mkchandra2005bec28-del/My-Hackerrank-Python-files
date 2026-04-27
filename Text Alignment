@@ -1,0 +1,28 @@
+thickness = int(input()) # This must be an odd number
+c = 'H'
+
+# Top Cone
+for i in range(thickness):
+    # Use rjust for the left side and ljust for the right side of the triangle
+    print((c*i).rjust(thickness-1) + c + (c*i).ljust(thickness-1))
+
+# Top Pillars
+for i in range(thickness+1):
+    # Center the H block in its designated column width
+    print((c*thickness).center(thickness*2) + (c*thickness).center(thickness*6))
+
+# Middle Belt
+for i in range((thickness+1)//2):
+    # Center the long bar across the width of the entire logo
+    print((c*thickness*5).center(thickness*6))    
+
+# Bottom Pillars
+for i in range(thickness+1):
+    # Same logic as top pillars
+    print((c*thickness).center(thickness*2) + (c*thickness).center(thickness*6))    
+
+# Bottom Cone
+for i in range(thickness):
+    # Build the inverted triangle (rjust + ljust) 
+    # then push the entire shape to the right using rjust(thickness*6)
+    print(((c*(thickness-i-1)).rjust(thickness) + c + (c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
