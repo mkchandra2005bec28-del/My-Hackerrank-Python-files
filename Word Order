@@ -1,0 +1,29 @@
+from collections import OrderedDict
+
+def count_word_occurrences():
+    # Initialize the ordered dictionary to track counts
+    word_counts = OrderedDict()
+    
+    # Read the number of words
+    try:
+        n = int(input().strip())
+    except EOFError:
+        return
+
+    for _ in range(n):
+        word = input().strip()
+        # Increment count if word exists, otherwise initialize to 1
+        if word in word_counts:
+            word_counts[word] += 1
+        else:
+            word_counts[word] = 1
+            
+    # Output the number of distinct words
+    print(len(word_counts))
+    
+    # Output the occurrences separated by a space
+    # We use join to convert the list of counts into a single string
+    print(*(word_counts.values()))
+
+if __name__ == "__main__":
+    count_word_occurrences()
