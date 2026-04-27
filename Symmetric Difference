@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input for set a
+m = int(input())
+a = set(map(int, input().split()))
+
+# Read input for set b
+n = int(input())
+b = set(map(int, input().split()))
+
+# Calculate symmetric difference
+# This finds (a - b) union (b - a)
+res = a.symmetric_difference(b)
+
+# Sort the results and print each on a new line
+for val in sorted(res):
+    print(val)
