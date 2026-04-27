@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Read input values
+N = int(input())
+letters = input().split()
+K = int(input())
+
+# Generate all possible combinations of indices
+indices = list(range(1, N + 1))
+all_combinations = list(combinations(indices, K))
+
+# Find the 1-based indices where the letter 'a' appears
+target_indices = [i + 1 for i, char in enumerate(letters) if char == 'a']
+
+# Count how many combinations contain at least one of those indices
+favorable_outcomes = 0
+for combo in all_combinations:
+    if any(idx in target_indices for idx in combo):
+        favorable_outcomes += 1
+
+# Calculate and print probability
+probability = favorable_outcomes / len(all_combinations)
+print(f"{probability:.4f}")
