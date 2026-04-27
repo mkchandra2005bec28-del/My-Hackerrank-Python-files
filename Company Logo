@@ -1,0 +1,22 @@
+from collections import Counter
+
+def generate_company_logo():
+    # Read the company name
+    s = input().strip()
+    
+    # Count the occurrences of each character
+    # Counter naturally handles the character mapping
+    counts = Counter(s)
+    
+    # Sort the items:
+    # 1. By frequency descending (-x[1])
+    # 2. By character ascending (x[0])
+    sorted_chars = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+    
+    # Print the top 3 results
+    for char, count in sorted_chars[:3]:
+        print(f"{char} {count}")
+
+if __name__ == "__main__":
+    generate_company_logo()
+
