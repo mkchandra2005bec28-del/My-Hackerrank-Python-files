@@ -1,0 +1,32 @@
+from collections import OrderedDict
+
+def track_supermarket_sales():
+    # Initialize the ordered dictionary
+    item_summary = OrderedDict()
+    
+    try:
+        # Read number of items
+        n = int(input().strip())
+        
+        for _ in range(n):
+            # Read line and split from the right to handle multi-word names
+            line = input().rsplit(' ', 1)
+            item_name = line[0]
+            price = int(line[1])
+            
+            # If item exists, add price; if not, create it
+            if item_name in item_summary:
+                item_summary[item_name] += price
+            else:
+                item_summary[item_name] = price
+                
+        # Print the results in order of first occurrence
+        for item, net_price in item_summary.items():
+            print(f"{item} {net_price}")
+            
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    track_supermarket_sales()
+
